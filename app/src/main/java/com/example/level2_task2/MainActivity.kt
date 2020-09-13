@@ -62,8 +62,8 @@ class MainActivity : AppCompatActivity() {
                     2 -> questionAnswer = "True"
                     3 -> questionAnswer = "True"
                 }
-                
-                // Check if user answer is equal to answer in object
+
+                // Check if user answer is equal to answer of item
                 if (direction == 8 && questionAnswer == "True" || direction == 4 && questionAnswer == "False") {
                     // Delete from list if answer is true
                     questions.removeAt(position)
