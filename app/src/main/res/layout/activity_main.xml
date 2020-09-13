@@ -27,6 +27,7 @@
         app:layout_constraintTop_toBottomOf="@+id/titleApp" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvQuestions"
         android:layout_width="411dp"
         android:layout_height="603dp"
         app:layout_constraintBottom_toBottomOf="parent"
