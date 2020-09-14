@@ -55,16 +55,17 @@ class MainActivity : AppCompatActivity() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val position = viewHolder.adapterPosition
 
-                var questionAnswer = ""
-                when (position){
-                    0 -> questionAnswer = "False"
-                    1 -> questionAnswer = "True"
-                    2 -> questionAnswer = "True"
-                    3 -> questionAnswer = "True"
+                // Defining actual answers by each question (as position)
+                val questionAnswer = when (position){
+                    0 -> false
+                    1 -> true
+                    2 -> true
+                    3 -> true
+                    else -> true
                 }
 
                 // Check if user answer is equal to answer of item
-                if (direction == 8 && questionAnswer == "True" || direction == 4 && questionAnswer == "False") {
+                if (direction == ItemTouchHelper.RIGHT && questionAnswer || direction == ItemTouchHelper.LEFT && !questionAnswer) {
                     // Delete from list if answer is true
                     questions.removeAt(position)
                 } else {
